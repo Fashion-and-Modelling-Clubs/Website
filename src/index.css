@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * COOLVETICA
+ * ----------
+ * Coolvetica's free download is a DESKTOP licence — it does not cover embedding
+ * the font on a website. To use it here properly, buy a webfont licence
+ * (typodermicfonts.com/coolvetica) or use the webfont kit you already own, then:
+ *
+ *   1. put coolvetica.woff2 (and optionally coolvetica-bold.woff2) into
+ *      public/assets/fonts/
+ *   2. that's it — the rules below pick them up
+ *
+ * Until then the site falls back to Helvetica Neue / Arial, which is what
+ * Coolvetica is built on, so the layout does not shift when you add it.
+ * The relative ../assets/ path is deliberate: it survives the GitHub Pages
+ * base path.
+ */
+@font-face {
+  font-family: "Coolvetica";
+  src: url("../assets/fonts/coolvetica.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Coolvetica";
+  src: url("../assets/fonts/coolvetica-bold.woff2") format("woff2");
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --ink: #080808;
+    --coal: #151515;
+    --paper: #f4f3ef;
+    --ash: #8b8b8b;
+    --brass: #b69b68;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-ink font-body text-paper antialiased;
+    /* Coolvetica is drawn very tight; a touch of tracking keeps it readable
+       at paragraph sizes without losing its character. */
+    letter-spacing: 0.015em;
+    overflow-x: hidden;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  ::selection {
+    background: var(--brass);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 1px solid var(--brass);
+    outline-offset: 3px;
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  img {
+    display: block;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-body text-[10px] uppercase tracking-label text-ash sm:text-[11px];
+  }
+
+  .display {
+    @apply font-display font-light leading-[0.9] tracking-[-0.01em];
+    letter-spacing: -0.005em;
+  }
+
+  .rule {
+    @apply bg-paper/15;
+  }
+
+  .rule-dark {
+    @apply bg-ink/15;
+  }
+
+  .link-underline {
+    @apply relative inline-block;
+  }
+  .link-underline::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 h-px w-0 bg-current transition-all duration-500 ease-editorial;
+  }
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    @apply w-full;
+  }
+
+  .btn-line {
+    @apply inline-flex items-center gap-3 border-b border-current pb-2 font-body text-[11px] uppercase tracking-label transition-colors duration-500 ease-editorial;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* A faint film grain so large black areas do not read as flat digital black. */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Previous sponsors marquee */
+@keyframes sponsor-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.sponsor-marquee {
+  animation: sponsor-marquee 22s linear infinite;
+  will-change: transform;
+}
+
+.sponsor-marquee:hover {
+  animation-play-state: paused;
+}
