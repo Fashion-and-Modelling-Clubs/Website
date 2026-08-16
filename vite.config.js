@@ -17,7 +17,7 @@ import react from "@vitejs/plugin-react";
  * src/data/images.js with import.meta.env.BASE_URL so they follow this setting.
  */
 export default defineConfig({
-  base: "/nitj-fashion/",
+  base: "/Fashion-and-Modelling-Club---website/",
   plugins: [react()],
   build: {
     outDir: "dist",
