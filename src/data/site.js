@@ -55,8 +55,7 @@ export const site = {
     label: "Clubs",
     heading: "The clubs",
     intro: "Reverie and Merveilleux, both run by students, both on this stage.",
-    legacyHeading: "Legacy",
-    legacyEmpty: "Achievements to be added.",
+    
     ideologyHeading: "What we believe",
   },
 

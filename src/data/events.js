@@ -30,6 +30,21 @@ import { images } from "./images";
  */
 
 export const events = [
+    {
+    id: "bharat dhwani",
+    title: "Bharat dhwani",
+    date: "",
+    time: "",
+    venue: "",
+    type: "cultural",
+    tags: ["night", "performance"],
+    club: "",
+    host: "",
+    performance: "",
+    image: images.events.bollywoodNight,
+    description: "",
+    instagram: "",
+  },
   {
     id: "bollywood-night",
     title: "Bollywood Night",

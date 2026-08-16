@@ -44,6 +44,7 @@ export default function Gallery() {
           label={site.archive.label}
           lines={[site.archive.heading]}
           intro={site.archive.intro}
+          labelAlign="center"
         />
 
         <FilterBar

@@ -9,7 +9,8 @@ export default function ContactSection() {
   return (
     <section id="contact" className="bg-paper py-20 text-ink sm:py-28">
       <div className="mx-auto max-w-page px-5 sm:px-8 lg:px-12">
-        <SectionHeading label={site.contact.label} lines={[site.contact.heading]} tone="light" />
+        <SectionHeading label={site.contact.label} lines={[site.contact.heading]} tone="light"
+        labelAlign="center" />
 
         <Reveal delay={0.06}>
           <p className="mt-7 max-w-2xl font-display text-2xl font-light leading-snug sm:text-3xl">
@@ -57,20 +58,27 @@ export default function ContactSection() {
                       {person.clubName}
                     </p>
                     <p className="mt-1 font-display text-2xl font-light">{person.name}</p>
-                    <div className="mt-3 flex flex-wrap gap-x-7 gap-y-2">
-                      <a
-                        href={`tel:+91${person.phone}`}
-                        className="link-underline text-sm font-light text-ink/70 hover:text-ink"
-                      >
-                        {site.contact.callLabel} {person.phoneDisplay}
-                      </a>
-                      <a
-                        href={`mailto:${person.email}`}
-                        className="link-underline break-all text-sm font-light text-ink/70 hover:text-ink"
-                      >
-                        {person.email}
-                      </a>
-                    </div>
+<div className="mt-3 flex flex-wrap items-center gap-x-8 gap-y-3">
+  <a
+    href={`tel:+91${person.phone}`}
+    className="link-underline text-sm font-light text-ink/70 hover:text-ink"
+  >
+    <span className="mr-2 text-[10px] uppercase tracking-label text-ink/45">
+      Phone
+    </span>
+    {person.phoneDisplay}
+  </a>
+
+  <a
+    href={`mailto:${person.email}`}
+    className="link-underline break-all text-sm font-light text-ink/70 hover:text-ink"
+  >
+    <span className="mr-2 text-[10px] uppercase tracking-label text-ink/45">
+      Gmail
+    </span>
+    {person.email}
+  </a>
+</div>
                   </div>
                 </Reveal>
               ))}
@@ -93,20 +101,27 @@ export default function ContactSection() {
                     {person.department && (
                       <p className="mt-1 text-sm font-light text-ink/60">{person.department}</p>
                     )}
-                    <div className="mt-3 flex flex-wrap gap-x-7 gap-y-2">
-                      <a
-                        href={`tel:+91${person.phone}`}
-                        className="link-underline text-sm font-light text-ink/70 hover:text-ink"
-                      >
-                        {site.contact.callLabel} {person.phoneDisplay}
-                      </a>
-                      <a
-                        href={`mailto:${person.email}`}
-                        className="link-underline break-all text-sm font-light text-ink/70 hover:text-ink"
-                      >
-                        {person.email}
-                      </a>
-                    </div>
+  <div className="mt-3 flex flex-wrap items-center gap-x-8 gap-y-3">
+  <a
+    href={`tel:+91${person.phone}`}
+    className="link-underline text-sm font-light text-ink/70 hover:text-ink"
+  >
+    <span className="mr-2 text-[10px] uppercase tracking-label text-ink/45">
+      Phone
+    </span>
+    {person.phoneDisplay}
+  </a>
+
+  <a
+    href={`mailto:${person.email}`}
+    className="link-underline break-all text-sm font-light text-ink/70 hover:text-ink"
+  >
+    <span className="mr-2 text-[10px] uppercase tracking-label text-ink/45">
+      Gmail
+    </span>
+    {person.email}
+  </a>
+</div>
                   </div>
                 </Reveal>
               ))}

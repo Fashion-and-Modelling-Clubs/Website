@@ -9,7 +9,7 @@ export default function People() {
   return (
     <section id="people" className="bg-ink py-14 sm:py-20">
       <div className="mx-auto max-w-page px-5 sm:px-8 lg:px-12">
-        <SectionHeading label={site.people.label} lines={site.people.heading} />
+        <SectionHeading label={site.people.label} lines={site.people.heading} labelAlign="center" />
 
         <div className="mt-12">
           <Reveal>

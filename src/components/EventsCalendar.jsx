@@ -21,6 +21,7 @@ export default function EventsCalendar() {
           lines={[site.events.heading]}
           intro={site.events.intro}
           tone="light"
+          labelAlign="center"
         />
 
         <div className="mt-10">

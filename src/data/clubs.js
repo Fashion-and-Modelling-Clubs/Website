@@ -18,9 +18,9 @@ export const clubs = {
   reverie: {
     id: "reverie",
     name: "Reverie",
-    tagline: "",
+    tagline: "Be the trend",
     description: "",
-    ideology: "",
+    ideology: "We believe fashion should be bold, creative, and fun - a space to experiment, express, and set the trend, not follow it. Legit coolest peeps on the campus. \n Fashion • Styling • Runway • Photography • Creative Direction",
     keywords: [],
     instagramHandle: "@reverie_nitj",
     instagram: "https://www.instagram.com/reverie_nitj/",

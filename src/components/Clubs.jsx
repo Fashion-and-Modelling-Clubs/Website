@@ -12,6 +12,7 @@ export default function Clubs() {
           label={site.clubs.label}
           lines={[site.clubs.heading]}
           intro={site.clubs.intro}
+          labelAlign="center"
         />
 
         <div className="mt-14 grid grid-cols-1 gap-14 sm:mt-16 lg:grid-cols-2 lg:gap-10 lg:items-start">

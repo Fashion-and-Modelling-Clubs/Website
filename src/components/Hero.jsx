@@ -32,7 +32,7 @@ export default function Hero() {
           ratio="auto"
           eager
           className="!absolute inset-0 h-full w-full !ring-0"
-          imgClassName="h-full w-full object-cover"
+          imgClassName="h-full w-full object-contain object-center sm:object-cover"
         />
       </motion.div>
 

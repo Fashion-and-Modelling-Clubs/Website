@@ -55,7 +55,6 @@ nitj-fashion/
 │   ├── data/            ← what the site says (edit this)
 │   │   ├── images.js        every image path
 │   │   ├── clubs.js         names, taglines, descriptions, ideology
-│   │   ├── achievements.js  the legacy lists
 │   │   ├── coordinators.js  faculty and student contacts
 │   │   ├── events.js        the calendar
 │   │   ├── gallery.js       archive photos
